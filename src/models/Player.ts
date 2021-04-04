@@ -1,7 +1,7 @@
 import { Deck } from './Deck';
-import { CreateEmptyDeck } from './CreateEmptyDeck';
+import { CreateEmptyDeck } from '../createDeck/CreateEmptyDeck';
 import { Card } from './Card';
-import { match } from './utils';
+import { match } from '../utils';
 
 export class Player {
   static CreatePlayer(name: string): Player {

@@ -1,5 +1,5 @@
-import { Card } from './Card';
-import { Deckable, Deck } from './Deck';
+import { Card } from '../models/Card';
+import { Deckable, Deck } from '../models/Deck';
 
 export class CreateEmptyDeck implements Deckable {
   deck: Card[] = [];

@@ -1,4 +1,4 @@
-import { Game } from './Game';
+import { Game } from './models/Game';
 
 //create a new game insatnce and initialize deck using a double deck
 const game = Game.CreateNewGameUsingDoubleDeck('john', 'smith');

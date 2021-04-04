@@ -1,6 +1,6 @@
 import { Deck } from './Deck';
 import { Player } from './Player';
-import { shuffleAny } from './utils';
+import { shuffleAny } from '../utils';
 import { Card } from './Card';
 
 export class Game {

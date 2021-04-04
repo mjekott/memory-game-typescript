@@ -1,7 +1,7 @@
-import { Card } from './Card';
-import { Deckable, Deck } from './Deck';
+import { Card } from '../models/Card';
+import { Deckable, Deck } from '../models/Deck';
 
-export class CreateDeckFromTwoArrays implements Deckable {
+export class CreateDoubleDeckFromTwoArrays implements Deckable {
   deck: Card[] = [];
   shape: string[] = ['Triangle', 'Square', 'Circle', 'Star'];
   color: string[] = ['Orange', 'Green', 'Blue', 'Yellow'];
@@ -22,7 +22,6 @@ export class CreateDeckFromTwoArrays implements Deckable {
       this.deck.push(new Card(this.shape[start], this.color[innerStart]));
       innerStart++;
     }
-
     this.deck = this.deck.concat(this.deck);
   }
 }

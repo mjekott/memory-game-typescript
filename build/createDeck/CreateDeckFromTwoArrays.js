@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateDeckFromTwoArrays = void 0;
-var Card_1 = require("./Card");
+var Card_1 = require("../models/Card");
 var CreateDeckFromTwoArrays = /** @class */ (function () {
     function CreateDeckFromTwoArrays() {
         this.deck = [];

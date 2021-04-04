@@ -1,10 +1,11 @@
 import { Card } from './Card';
-import { CreateDoubleDeckFromTwoArrays } from './CreateDoubleDeckFromTwoArrays';
+import { CreateDoubleDeckFromTwoArrays } from '../createDeck/CreateDoubleDeckFromTwoArrays';
 
 export interface Deckable {
   deck: Card[];
   load(): void;
 }
+
 export class Deck {
   deck: Card[] = [];
   get length(): number {

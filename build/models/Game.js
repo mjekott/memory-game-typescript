@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Game = void 0;
 var Deck_1 = require("./Deck");
 var Player_1 = require("./Player");
-var utils_1 = require("./utils");
+var utils_1 = require("../utils");
 var Game = /** @class */ (function () {
     function Game(player1, player2, deck) {
         this.player1 = player1;

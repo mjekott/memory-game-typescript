@@ -7,8 +7,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Player = void 0;
 var Deck_1 = require("./Deck");
-var CreateEmptyDeck_1 = require("./CreateEmptyDeck");
-var utils_1 = require("./utils");
+var CreateEmptyDeck_1 = require("../createDeck/CreateEmptyDeck");
+var utils_1 = require("../utils");
 var Player = /** @class */ (function () {
     function Player(name, deck) {
         this.name = name;
