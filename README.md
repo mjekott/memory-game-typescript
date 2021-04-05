@@ -7,10 +7,12 @@ Cards are paired when both their colour and shape are the same (e.g. a red trian
 Players take turns to flip over two cards of their choosing. If they pick a matching pair, they keep both cards. If not, both cards are turned face down again.
 The game is over when there are no cards left. The winner is the player with the most cards.
 
-# TechStack
+## TechStack
 
 Typescript
 
-# Run Project
+## Run Project
 
 node build/index.js
+
+<img src="/image.png"/>

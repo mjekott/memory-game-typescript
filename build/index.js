@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Game_1 = require("./models/Game");
+var Model_1 = require("./Model");
 //create a new game insatnce and initialize deck using a double deck
-var game = Game_1.Game.CreateNewGameUsingDoubleDeck('john', 'smith');
+var game = Model_1.Game.BuildGame('john', 'smith');
 //start Game;
 game.start();

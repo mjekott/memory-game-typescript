@@ -1,7 +1,7 @@
-import { Card } from '../models/Card';
-import { Deckable, Deck } from '../models/Deck';
+import { IDeck } from './Interface';
+import { Card } from './Model';
 
-export class CreateDoubleDeckFromTwoArrays implements Deckable {
+export class CreateDeck implements IDeck {
   deck: Card[] = [];
   shape: string[] = ['Triangle', 'Square', 'Circle', 'Star'];
   color: string[] = ['Orange', 'Green', 'Blue', 'Yellow'];
@@ -22,6 +22,15 @@ export class CreateDoubleDeckFromTwoArrays implements Deckable {
       this.deck.push(new Card(this.shape[start], this.color[innerStart]));
       innerStart++;
     }
+
     this.deck = this.deck.concat(this.deck);
+  }
+}
+
+export class CreateEmptyDeck implements IDeck {
+  deck: Card[] = [];
+
+  load(): void {
+    this.deck = [];
   }
 }
