@@ -1,5 +1,5 @@
 import { IDeck } from './Interface';
-import { Card } from './Model';
+import { Card, Shape, Color } from './Model';
 
 export class CreateDeck implements IDeck {
   deck: Card[] = [];
@@ -19,7 +19,12 @@ export class CreateDeck implements IDeck {
       if (start > end) {
         break;
       }
-      this.deck.push(new Card(this.shape[start], this.color[innerStart]));
+      this.deck.push(
+        new Card(
+          new Shape(this.shape[start]),
+          new Color(this.color[innerStart])
+        )
+      );
       innerStart++;
     }
 

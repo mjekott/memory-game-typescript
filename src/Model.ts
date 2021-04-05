@@ -22,14 +22,14 @@ export class Card {
   }
 }
 
-class Shape {
+export class Shape {
   constructor(private name: string) {}
   get shape() {
     return this.name;
   }
 }
 
-class Color {
+export class Color {
   constructor(private name: string) {}
   get color() {
     return this.name;
@@ -79,7 +79,7 @@ export class Player {
     const arr = [...data.deck];
     let first = Math.floor(Math.random() * arr.length);
     let value = arr[first];
-    console.log(va);
+
     arr.splice(first, 1);
     let second = Math.floor(Math.random() * arr.length);
     let value2 = arr[second];
