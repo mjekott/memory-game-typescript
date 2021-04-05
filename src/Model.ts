@@ -1,8 +1,8 @@
-import { IDeck, ICard } from './Interface';
+import { IDeck } from './Interface';
 import { CreateDeck } from './CreateDeck';
 
 export class Card {
-  constructor(public shape: string, public value: string) {}
+  constructor(private shape: Shape, private color: Color) {}
 
   static match(card1: Card, card2: Card) {
     if (!card1 || !card2) {
@@ -12,6 +12,27 @@ export class Card {
       return true;
     }
     return false;
+  }
+
+  match(card: Card): boolean {
+    return (
+      this.shape.shape === card.shape.shape &&
+      this.color.color === card.color.color
+    );
+  }
+}
+
+class Shape {
+  constructor(private name: string) {}
+  get shape() {
+    return this.name;
+  }
+}
+
+class Color {
+  constructor(private name: string) {}
+  get color() {
+    return this.name;
   }
 }
 
@@ -58,6 +79,7 @@ export class Player {
     const arr = [...data.deck];
     let first = Math.floor(Math.random() * arr.length);
     let value = arr[first];
+    console.log(va);
     arr.splice(first, 1);
     let second = Math.floor(Math.random() * arr.length);
     let value2 = arr[second];
