@@ -37,7 +37,7 @@ export class Color {
 }
 
 export class Deck {
-  deck: Card[] = [];
+  private deck: Card[] = [];
   get length(): number {
     return this.deck.length;
   }
@@ -45,6 +45,10 @@ export class Deck {
   constructor(public reader: IDeck) {
     this.reader.load();
     this.deck = this.reader.deck;
+  }
+
+  get getDeck() {
+    return this.deck;
   }
 
   static BuildDeck(): Deck {
@@ -73,21 +77,26 @@ export class Player {
   static BuildPlayer(name: string): Player {
     return new Player(name);
   }
-  constructor(public name: string) {}
+  constructor(private name: string) {}
+
+  get playerName() {
+    return this.name;
+  }
 
   play(data: Deck): void {
-    const arr = [...data.deck];
+    const arr = [...data.getDeck];
     let first = Math.floor(Math.random() * arr.length);
-    let value = arr[first];
+    let card1 = arr[first];
 
     arr.splice(first, 1);
     let second = Math.floor(Math.random() * arr.length);
-    let value2 = arr[second];
+    let card2 = arr[second];
     arr.splice(second, 1);
-    if (Card.match(value, value2)) {
+
+    if (card1.match(card2)) {
       console.log(`${this.name}` + 'makes a match');
-      data.removeFromDeck(value);
-      data.removeFromDeck(value2);
+      data.removeFromDeck(card1);
+      data.removeFromDeck(card2);
       this.score++;
     }
   }
@@ -115,7 +124,7 @@ export class Game {
   }
 
   start(): void {
-    Deck.shuffleDeck(this.deck.deck);
+    Deck.shuffleDeck(this.deck.getDeck);
     console.log('Game Starts');
 
     while (this.deck.length > 0) {
@@ -137,9 +146,9 @@ export class Game {
   }
   checkWinner(): void {
     this.player1.score > this.player2.score
-      ? (this.winner = this.player1.name)
+      ? (this.winner = this.player1.playerName)
       : this.player1.score == this.player2.score
       ? (this.winner = 'Draw')
-      : (this.winner = this.player2.name);
+      : (this.winner = this.player2.playerName);
   }
 }
